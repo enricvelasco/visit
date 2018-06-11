@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "586946593674",
+    "firebase_url": "https://visitore-app.firebaseio.com",
+    "project_id": "visitore-app",
+    "storage_bucket": "visitore-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586946593674:android:ba23849d132f4542",
+        "android_client_info": {
+          "package_name": "com.visitore.visitoreclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586946593674-4j29h018tuqjdvlncsnqjor05pskt5jv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.visitore.visitoreclient",
+            "certificate_hash": "afb767855ab93184ce12c292606879248e942e66"
+          }
+        },
+        {
+          "client_id": "586946593674-3ft8of71hiosbvt13clc3cg0cbo7b0kd.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "586946593674-3ft8of71hiosbvt13clc3cg0cbo7b0kd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEBTUpG7fLpvLYbTfQUI4j7ScMR1leEhQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586946593674-3ft8of71hiosbvt13clc3cg0cbo7b0kd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

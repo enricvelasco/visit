@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">VisitoreClient</string>
+    <string name="title_activity_login_init">Visitore</string>
+    <string name="EMAIL">Email</string>
+    <string name="PASSWORD">Contraseña</string>
+    <string name="title_activity_menu_principal">MenuPrincipal</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_pantalla_principal">PantallaPrincipalActivity</string>
+    <string name="HOME">Home</string>
+    <string name="FAVORITO">Favoritos</string>
+    <string name="FILTRAR">Filtrar</string>
+    <string name="PERFIL">Perfil</string>
+    <string name="title_activity_loading_incial">LoadingIncialActivity</string>
+    <string name="NEW_USER">Nuevo Usuario</string>
+</resources>
