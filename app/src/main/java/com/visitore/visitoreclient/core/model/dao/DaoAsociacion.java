@@ -4,7 +4,8 @@ import com.visitore.visitoreclient.core.domain.Asociacion;
 import java.util.List;
 
 public interface DaoAsociacion {
-    public void onStart();
-    public void onSuccess(List<Asociacion> asociacion);
-    public void onFailed(Exception e);
+    void onSuccessList(List<Asociacion> asociacionList);
+    void onSuccessRead(Asociacion asociacion);
+    void onSuccessDeleted();
+    void onFailed(String e);
 }

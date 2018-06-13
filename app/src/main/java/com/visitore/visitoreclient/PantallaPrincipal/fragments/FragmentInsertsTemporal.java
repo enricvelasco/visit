@@ -18,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.visitore.visitoreclient.R;
 import com.visitore.visitoreclient.core.domain.Asociacion;
-import com.visitore.visitoreclient.core.domain.CategoriasProductos;
+import com.visitore.visitoreclient.core.domain.CategoriaProductos;
 import com.visitore.visitoreclient.core.domain.Producto;
 import com.visitore.visitoreclient.core.domain.Tienda;
 
@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentInsertsTemporal extends Fragment {
-    private List<CategoriasProductos> tcategoriasProductosList;
+    private List<CategoriaProductos> tcategoriasProductosList;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     List<Asociacion> listaAsociaciones;
@@ -188,7 +188,7 @@ public class FragmentInsertsTemporal extends Fragment {
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot document : task.getResult()) {
                                 System.out.println("OK "+document.getData());
-                                CategoriasProductos cate = document.toObject(CategoriasProductos.class);
+                                CategoriaProductos cate = document.toObject(CategoriaProductos.class);
                                 System.out.println("OK-2 "+cate.getNombre());
                                 db.collection("categoriasProductos").document(cate.get_id())
                                         .delete()
@@ -220,42 +220,42 @@ public class FragmentInsertsTemporal extends Fragment {
     private void generarCategorias() {
         tcategoriasProductosList = new ArrayList<>();
 
-        CategoriasProductos c1 = new CategoriasProductos("MODA");
+        CategoriaProductos c1 = new CategoriaProductos("MODA",0);
         //tcategoriasProductosList.add(c1);
-        List<CategoriasProductos> listaSubcategoria = new ArrayList<>();
-        CategoriasProductos s1 = new CategoriasProductos("Moda Hombre");
-            List<CategoriasProductos> sub1List = new ArrayList<>();
-            CategoriasProductos as1 = new CategoriasProductos();
-            as1.setNombre("Camisas");
-            CategoriasProductos as2 = new CategoriasProductos();
-            as2.setNombre("Ropa deporte");
+        List<CategoriaProductos> listaSubcategoria = new ArrayList<>();
+        CategoriaProductos s1 = new CategoriaProductos("Moda Hombre",0);
+            List<CategoriaProductos> sub1List = new ArrayList<>();
+            CategoriaProductos as1 = new CategoriaProductos("Camisas",0);
+            sub1List.add(as1);
+            CategoriaProductos as2 = new CategoriaProductos("Ropa deporte",1);
+            sub1List.add(as2);
             s1.setCategoriasHijas(sub1List);
             listaSubcategoria.add(s1);
-        CategoriasProductos s2 = new CategoriasProductos("Moda Mujer");
+        CategoriaProductos s2 = new CategoriaProductos("Moda Mujer",1);
         listaSubcategoria.add(s2);
         c1.setCategoriasHijas(listaSubcategoria);
         tcategoriasProductosList.add(c1);
 
-        CategoriasProductos c2 = new CategoriasProductos("RESTAURACIÓN");
+        CategoriaProductos c2 = new CategoriaProductos("RESTAURACIÓN",1);
         //tcategoriasProductosList.add(c2);
-        List<CategoriasProductos> listaSubcategoria2 = new ArrayList<>();
-        CategoriasProductos ss1 = new CategoriasProductos("Hamburgueseria");
+        List<CategoriaProductos> listaSubcategoria2 = new ArrayList<>();
+        CategoriaProductos ss1 = new CategoriaProductos("Hamburgueseria",0);
         listaSubcategoria2.add(ss1);
-        CategoriasProductos ss2 = new CategoriasProductos("Pizzeria");
+        CategoriaProductos ss2 = new CategoriaProductos("Pizzeria",1);
         listaSubcategoria2.add(ss2);
         c2.setCategoriasHijas(listaSubcategoria2);
         tcategoriasProductosList.add(c2);
 
-        CategoriasProductos c3 = new CategoriasProductos("MENAGE");
+        CategoriaProductos c3 = new CategoriaProductos("MENAGE",2);
         tcategoriasProductosList.add(c3);
-        CategoriasProductos c4 = new CategoriasProductos("SALUD Y BELLEZA");
+        CategoriaProductos c4 = new CategoriaProductos("SALUD Y BELLEZA",3);
         tcategoriasProductosList.add(c4);
-        CategoriasProductos c5 = new CategoriasProductos("MOTOR");
+        CategoriaProductos c5 = new CategoriaProductos("MOTOR",4);
         tcategoriasProductosList.add(c5);
 
 
 
-        for(CategoriasProductos cat:tcategoriasProductosList){
+        for(CategoriaProductos cat:tcategoriasProductosList){
             db.collection("categoriasProductos")
                     .document(cat.get_id())
                     .set(cat);

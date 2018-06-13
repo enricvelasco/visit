@@ -4,20 +4,22 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-public class CategoriasProductos {
+public class CategoriaProductos {
     private String _id = UUID.randomUUID().toString();
     private String nombre;
     private String descripcion;
-    private List<CategoriasProductos> categoriasHijas;
+    private int orden = 0;
+    private List<CategoriaProductos> categoriasHijas;
 
     Date fechaCreacion = new Date();
     Date fechaModificacion = new Date();
 
-    public CategoriasProductos() {
+    public CategoriaProductos() {
     }
 
-    public CategoriasProductos(String nombre) {
+    public CategoriaProductos(String nombre, int orden) {
         this.nombre = nombre;
+        this.orden = orden;
     }
 
     public String get_id() {
@@ -44,11 +46,11 @@ public class CategoriasProductos {
         this.descripcion = descripcion;
     }
 
-    public List<CategoriasProductos> getCategoriasHijas() {
+    public List<CategoriaProductos> getCategoriasHijas() {
         return categoriasHijas;
     }
 
-    public void setCategoriasHijas(List<CategoriasProductos> categoriasHijas) {
+    public void setCategoriasHijas(List<CategoriaProductos> categoriasHijas) {
         this.categoriasHijas = categoriasHijas;
     }
 
@@ -66,5 +68,13 @@ public class CategoriasProductos {
 
     public void setFechaModificacion(Date fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
+    }
+
+    public int getOrden() {
+        return orden;
+    }
+
+    public void setOrden(int orden) {
+        this.orden = orden;
     }
 }

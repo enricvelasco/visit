@@ -16,6 +16,7 @@ import android.view.View;
 import com.visitore.visitoreclient.PantallaPrincipal.fragments.Fragment1;
 import com.visitore.visitoreclient.PantallaPrincipal.fragments.Fragment2;
 import com.visitore.visitoreclient.PantallaPrincipal.fragments.Fragment3;
+import com.visitore.visitoreclient.PantallaPrincipal.fragments.FragmentAplicarFiltro;
 import com.visitore.visitoreclient.PantallaPrincipal.fragments.FragmentDescubrir;
 import com.visitore.visitoreclient.PantallaPrincipal.fragments.FragmentInsertsTemporal;
 import com.visitore.visitoreclient.R;
@@ -49,7 +50,7 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
                         Log.d("ITEM-2", "mostrar 2");
                         break;
                     case R.id.item_3:
-                        selectedFragment = Fragment3.newInstance();
+                        selectedFragment = FragmentAplicarFiltro.newInstance();
                         Log.d("ITEM-3", "mostrar 3");
                         break;
                     case R.id.item_4:
